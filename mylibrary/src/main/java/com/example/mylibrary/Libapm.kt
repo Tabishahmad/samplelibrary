@@ -9,13 +9,9 @@ import io.sentry.protocol.User
 object Libapm {
     fun init(context:Context,tackingId:String){
         var deviceID : String = ""
-        // Create a configuration for Sentry
-
-
-
         try {
             SentryAndroid.init(context) {
-                it.dsn =tackingId
+                it.dsn = tackingId
                 it.enableTracing = true
                 it.isAttachScreenshot = true
                 it.isAttachViewHierarchy = true
